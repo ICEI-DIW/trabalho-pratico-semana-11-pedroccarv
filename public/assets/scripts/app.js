@@ -1,63 +1,63 @@
 async function buscarFilmes() {
   try {
-    const resposta = await fetch('http://localhost:3000/filmes');
-    if (!resposta.ok) throw new Error('Erro ao buscar dados da API');
-    return await resposta.json();
+    const resposta = await fetch('./filmes')
+    if (!resposta.ok) throw new Error('Erro ao buscar dados da API')
+    return await resposta.json()
   } catch (erro) {
-    console.error('Erro ao buscar filmes:', erro);
-    return [];
+    console.error('Erro ao buscar filmes:', erro)
+    return []
   }
 }
 
 function listarFilmes(dados) {
-  const lancamentosContainer = document.getElementById('lista-filmes');
-  const maisVistosContainer = document.getElementById('lista-maisvistos');
+  const lancamentosContainer = document.getElementById('lista-filmes')
+  const maisVistosContainer = document.getElementById('lista-maisvistos')
 
-  if (!lancamentosContainer || !maisVistosContainer) return;
+  if (!lancamentosContainer || !maisVistosContainer) return
 
-  lancamentosContainer.innerHTML = '';
-  maisVistosContainer.innerHTML = '';
+  lancamentosContainer.innerHTML = ''
+  maisVistosContainer.innerHTML = ''
 
   dados.slice(0, 4).forEach(filme => {
-    const card = document.createElement('article');
-    card.classList.add('card', 'p-2', 'text-center');
+    const card = document.createElement('article')
+    card.classList.add('card', 'p-2', 'text-center')
 
     card.innerHTML = `
       <img src="${filme.imagem}" alt="${filme.titulo}" class="w-100 mb-2">
       <h3>${filme.titulo}</h3>
       <p>${filme.descricao}</p>
       <a href="detalhes.html?id=${filme.id}" class="btn btn-primary mt-2">Ver Detalhes</a>
-    `;
+    `
 
-    lancamentosContainer.appendChild(card);
-  });
+    lancamentosContainer.appendChild(card)
+  })
 
   dados.slice(4, 8).forEach(filme => {
-    const card = document.createElement('article');
-    card.classList.add('card', 'p-2', 'text-center');
+    const card = document.createElement('article')
+    card.classList.add('card', 'p-2', 'text-center')
 
     card.innerHTML = `
       <img src="${filme.imagem}" alt="${filme.titulo}" class="w-100 mb-2">
       <h3>${filme.titulo}</h3>
       <p>${filme.descricao}</p>
       <a href="detalhes.html?id=${filme.id}" class="btn btn-primary mt-2">Ver Detalhes</a>
-    `;
+    `
 
-    maisVistosContainer.appendChild(card);
-  });
+    maisVistosContainer.appendChild(card)
+  })
 }
 
 function mostrarDetalhes(dados) {
-  const container = document.getElementById('detalhes-filme');
-  if (!container) return;
+  const container = document.getElementById('detalhes-filme')
+  if (!container) return
 
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get('id'); // Mantém como string
+  const params = new URLSearchParams(window.location.search)
+  const id = params.get('id')
 
-  const filme = dados.find(f => f.id == id); // Comparação fraca resolve o problema
+  const filme = dados.find(f => f.id == id)
 
   if (filme) {
-    let imagensExtrasHTML = '';
+    let imagensExtrasHTML = ''
     if (filme.imagens_complementares && filme.imagens_complementares.length > 0) {
       imagensExtrasHTML = `
         <section class="mt-5">
@@ -71,7 +71,7 @@ function mostrarDetalhes(dados) {
             `).join('')}
           </div>
         </section>
-      `;
+      `
     }
 
     container.innerHTML = `
@@ -96,22 +96,22 @@ function mostrarDetalhes(dados) {
       <div class="mt-4">
         <a href="index.html" class="btn btn-secondary">Voltar para Home</a>
       </div>
-    `;
+    `
   } else {
-    container.innerHTML = `<p>Filme com ID "${id}" não encontrado.</p>`;
+    container.innerHTML = `<p>Filme com ID "${id}" não encontrado.</p>`
   }
 }
 
 function carregarDestaque(dados) {
-  const carouselInner = document.getElementById('carousel-inner');
-  if (!carouselInner) return;
+  const carouselInner = document.getElementById('carousel-inner')
+  if (!carouselInner) return
 
-  carouselInner.innerHTML = '';
+  carouselInner.innerHTML = ''
 
   dados.slice(0, 4).forEach((filme, index) => {
-    const isActive = index === 0 ? 'active' : '';
-    const item = document.createElement('div');
-    item.className = `carousel-item ${isActive}`;
+    const isActive = index === 0 ? 'active' : ''
+    const item = document.createElement('div')
+    item.className = `carousel-item ${isActive}`
 
     item.innerHTML = `
       <a href="detalhes.html?id=${filme.id}" class="text-decoration-none text-dark">
@@ -127,15 +127,15 @@ function carregarDestaque(dados) {
           </div>
         </div>
       </a>
-    `;
+    `
 
-    carouselInner.appendChild(item);
-  });
+    carouselInner.appendChild(item)
+  })
 }
 
 window.onload = async () => {
-  const dados = await buscarFilmes();
-  listarFilmes(dados);
-  mostrarDetalhes(dados);
-  carregarDestaque(dados);
-};
+  const dados = await buscarFilmes()
+  listarFilmes(dados)
+  mostrarDetalhes(dados)
+  carregarDestaque(dados)
+}
