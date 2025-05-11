@@ -4,18 +4,18 @@ Nessa etapa, vamos evoluir o projeto anterior e contemplar um ambiente de desenv
 
 ## Informações do trabalho
 
-- Nome:
-- Matricula:
-- Proposta de projeto escolhida:
-- Breve descrição sobre seu projeto:
+- Nome: Pedro Henrique Carvalho
+- Matricula: 895638
+- Proposta de projeto escolhida: Filme
+- Breve descrição sobre seu projeto: Estou desenvolvendo um site para mostrar filmes e series que estao disponiveis nos mais diversos streaming
 
 **Print do teste da API com visualização do JSON**
 
-<<  COLOQUE A IMAGEM AQUI >>
+![Print teste API](/public/assets/imgREADME/json.png)
 
 **Print da aba NETWORK com requisições Fetch/XHR**
 
-<<  COLOQUE A IMAGEM AQUI >>
+![Print teste API](/public/assets/imgREADME/req.png)
 
 ## **Orientações Gerais**
 
