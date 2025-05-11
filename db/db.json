@@ -8,7 +8,7 @@
       "genero": "Ficção Científica",
       "diretor": "Lucas Almeida",
       "anoLancamento": 2024,
-      "imagem": "/public/assets/img/orion.jpg"
+      "imagem": "./assets/img/orion.jpg"
     },
     {
       "id": 2,
@@ -18,7 +18,7 @@
       "genero": "Romance",
       "diretor": "Mariana Costa",
       "anoLancamento": 2023,
-      "imagem": "/public/assets/img/estrelas.jpg"
+      "imagem": "./assets/img/estrelas.jpg"
     },
     {
       "id": 3,
@@ -28,7 +28,7 @@
       "genero": "Fantasia",
       "diretor": "Eduardo Nogueira",
       "anoLancamento": 2025,
-      "imagem": "/public/assets/img/guardiao.jpg"
+      "imagem": "./assets/img/guardiao.jpg"
     },
     {
       "id": 4,
@@ -38,7 +38,7 @@
       "genero": "Suspense",
       "diretor": "Fernanda Ribeiro",
       "anoLancamento": 2022,
-      "imagem": "/public/assets/img/refugio.jpg"
+      "imagem": "./assets/img/refugio.jpg"
     },
     {
       "id": 5,
@@ -48,7 +48,7 @@
       "genero": "Terror",
       "diretor": "Bruno Silva",
       "anoLancamento": 2024,
-      "imagem": "/public/assets/img/cidadefantasma.jpg"
+      "imagem": "./assets/img/cidadefantasma.jpg"
     },
     {
       "id": 6,
@@ -58,7 +58,7 @@
       "genero": "Ação",
       "diretor": "Carlos Menezes",
       "anoLancamento": 2023,
-      "imagem": "/public/assets/img/corrida.jpg"
+      "imagem": "./assets/img/corrida.jpg"
     },
     {
       "id": 7,
@@ -68,7 +68,7 @@
       "genero": "Drama",
       "diretor": "Ana Paula Souza",
       "anoLancamento": 2025,
-      "imagem": "/public/assets/img/notas.jpg"
+      "imagem": "./assets/img/notas.jpg"
     },
     {
       "id": 8,
@@ -78,7 +78,7 @@
       "genero": "Thriller",
       "diretor": "Diego Martins",
       "anoLancamento": 2024,
-      "imagem": "/public/assets/img/sombras.jpg"
+      "imagem": "./assets/img/sombras.jpg"
     }
   ]
 }
